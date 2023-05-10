@@ -1,4 +1,6 @@
-public class Guarda extends Pessoa{
+import interfaces.Patrulha;
+
+public class Guarda extends Pessoa implements Patrulha{
 
     private int coragem;
 
@@ -22,6 +24,11 @@ public class Guarda extends Pessoa{
     @Override
     public void mostraInfo() {
         super.mostraInfo();
-        System.out.println("Coragem: " + this.coragem + ";");
+        System.out.println("Coragem: " + this.coragem + ";\n");
+    }
+
+    @Override
+    public void fazerPatrulha() {
+        System.out.println(this.nome + " fez uma patrulha além da muralha");
     }
 }

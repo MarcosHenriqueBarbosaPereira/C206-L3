@@ -1,6 +1,6 @@
 public abstract class Pessoa {
 
-    public static int qntPessoa=0;
+    public static int qtdPessoa=0;
     protected String nome;
     protected int idade;
     protected int honra;
@@ -10,7 +10,7 @@ public abstract class Pessoa {
         this.nome = nome;
         this.idade = idade;
         this.honra = honra;
-        qntPessoa++;
+        qtdPessoa++;
     }
 
     public void mostraInfo(){
@@ -21,7 +21,6 @@ public abstract class Pessoa {
             System.out.println("Tipo de arma: " + arma.getTipo() + ";");
         else System.out.println("Não possui arma.");
     }
-
 
     public abstract void orar();
 

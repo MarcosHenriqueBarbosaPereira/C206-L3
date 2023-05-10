@@ -1,4 +1,6 @@
-public class Cavaleiro extends Pessoa{
+import interfaces.*;
+
+public class Cavaleiro extends Pessoa implements Patrulha, Consagra{
 
     private String casa;
     private String nomeEscudeiro;
@@ -12,7 +14,7 @@ public class Cavaleiro extends Pessoa{
     }
 
     public void orar() {
-        System.out.println(this.nome + "fez uma oração ao deus do fogo");
+        System.out.println(this.nome + " fez uma oração ao deus do fogo");
     }
 
     @Override
@@ -21,8 +23,8 @@ public class Cavaleiro extends Pessoa{
         System.out.println("Casa: " + this.casa + ";");
         System.out.println("Escudeiro: " + this.nomeEscudeiro + ";");
         if(montaria != null)
-            System.out.println("Montaria: " + montaria.getNome() + ";");
-        else System.out.println("Este Cavaleiro não possui montaria.");
+            System.out.println("Montaria: " + montaria.getNome() + ";\n");
+        else System.out.println("Este Cavaleiro não possui montaria.\n");
     }
 
     public void setCasa(String casa) {
@@ -39,5 +41,16 @@ public class Cavaleiro extends Pessoa{
 
     public String getNomeEscudeiro() {
         return nomeEscudeiro;
+    }
+
+    @Override
+    public void consagrarCavaleiro() {
+        System.out.println(this.nome + " consagrou um novo cavaleiro");
+        this.honra += 5;
+    }
+
+    @Override
+    public void fazerPatrulha() {
+        System.out.println(this.nome + " fez uma patrulha pelo reino");
     }
 }
